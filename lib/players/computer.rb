@@ -36,6 +36,11 @@ module Players
         if winning_comb == nil
             puts "there are no two Xs or Os in one row, looking for single"
             winning_comb = Game::WIN_COMBINATIONS.find { |item| (!board.taken?(item[0]) || !board.taken?(item[1]) || !board.taken?(item[2])) &&
+          (board.cells[item[0]] == token || board.cells[item[1]] == token || board.cells[item[2]] == token)}
+        end
+        if winning_comb == nil
+            puts "there are no two Xs or Os in one row, looking for single"
+            winning_comb = Game::WIN_COMBINATIONS.find { |item| (!board.taken?(item[0]) || !board.taken?(item[1]) || !board.taken?(item[2])) &&
           (board.cells[item[0]] == opponent_token || board.cells[item[1]] == opponent_token || board.cells[item[2]] == opponent_token)}
         end
         puts winning_comb.to_s + "winning combination"
