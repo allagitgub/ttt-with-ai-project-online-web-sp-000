@@ -49,6 +49,7 @@ module Players
         end
         puts winning_comb.to_s + "winning combination"
         if winning_comb == nil
+          puts "just looking for empty spot"
           move = index_to_input(board.cells.find_index(" "))
           puts "move"+move
           move
