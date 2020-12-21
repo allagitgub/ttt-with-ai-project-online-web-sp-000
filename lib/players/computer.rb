@@ -36,14 +36,14 @@ module Players
         if winning_comb == nil
             puts "there are no two Xs or Os in one row, looking for single my token"
             winning_comb = Game::WIN_COMBINATIONS.find { |item|
-          (board.cells[item[0]] == token && !board.taken?(item[1]) && !board.taken?(item[2])) || (board.cells[item[1]] == token  && !board.taken?(item[0]) && !board.taken?(item[2]))  || 
+          (board.cells[item[0]] == token && !board.taken?(item[1]) && !board.taken?(item[2])) || (board.cells[item[1]] == token  && !board.taken?(item[0]) && !board.taken?(item[2]))  ||
           (board.cells[item[2]] == token && !board.taken?(item[0]) && !board.taken?(item[1]))
         }
         end
         if winning_comb == nil
             puts "there are no two Xs or Os in one row, looking for single opponent token"
-            winning_comb = Game::WIN_COMBINATIONS.find { |item|           
-              (board.cells[item[0]] == opponent_token && !board.taken?(item[1]) && !board.taken?(item[2])) || (board.cells[item[1]] == opponent_token  && !board.taken?(item[0]) && !board.taken?(item[2]))  || 
+            winning_comb = Game::WIN_COMBINATIONS.find { |item|
+              (board.cells[item[0]] == opponent_token && !board.taken?(item[1]) && !board.taken?(item[2])) || (board.cells[item[1]] == opponent_token  && !board.taken?(item[0]) && !board.taken?(item[2]))  ||
                       (board.cells[item[2]] == opponent_token && !board.taken?(item[0]) && !board.taken?(item[1]))
            }
         end
