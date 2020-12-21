@@ -63,7 +63,7 @@ class Board
     position(input) == "X" || position(input) == "O"
   end
   def valid_move?(input)
-    input != nil && (Float(input) rescue false) && input.to_i.between?(0,8) && !taken?(input)
+    input != nil && (Float(input) rescue false) && input.to_i.between?(1,9) && !taken?(input)
   end
 
   def empty?
