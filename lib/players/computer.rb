@@ -53,20 +53,22 @@ module Players
           move = index_to_input(board.cells.find_index(" "))
           puts "move"+move
           move
-        end
-        if !board.taken?(winning_comb[0])
-          move = index_to_input(winning_comb[0])
-          puts "move "+move
-          move
-        elsif !board.taken?(winning_comb[2])
-          move = index_to_input(winning_comb[2])
-          puts "move "+move
-          move
         else
-          move = index_to_input(winning_comb[1])
-          puts "move "+move
-          move
+          if !board.taken?(winning_comb[0])
+            move = index_to_input(winning_comb[0])
+            puts "move "+move
+            move
+          elsif !board.taken?(winning_comb[2])
+            move = index_to_input(winning_comb[2])
+            puts "move "+move
+            move
+          else
+            move = index_to_input(winning_comb[1])
+            puts "move "+move
+            move
+          end
         end
+      
     end
 
     def index_to_input(index)
