@@ -68,7 +68,7 @@ module Players
             move
           end
         end
-      
+
     end
 
     def index_to_input(index)
