@@ -48,6 +48,11 @@ module Players
            }
         end
         puts winning_comb.to_s + "winning combination"
+        if winning_comb == nil
+          move = index_to_input(board.cells.find_index(" "))
+          puts "move"+move
+          move
+        end
         if !board.taken?(winning_comb[0])
           move = index_to_input(winning_comb[0])
           puts "move "+move
