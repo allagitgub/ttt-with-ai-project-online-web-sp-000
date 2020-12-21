@@ -118,6 +118,7 @@ WIN_COMBINATIONS = [
     index = self.current_player.move(board)
 
     while !self.board.valid_move?(index)
+      puts "invalid move loop"
       index = self.current_player.move(board)
     end
     puts "got out of the invalid loop"
